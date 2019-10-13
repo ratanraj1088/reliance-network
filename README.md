@@ -34,17 +34,17 @@ Steps:-
 1.	Creating certificates for the peer organisations.
 .. /bin/cryptogen generate --config crypto-config.yaml
  
-# Genesis Block Transaction
+   # Genesis Block Transaction
 
 2.	The first artefact was the genesis block, which was generated using the following command:
    ../bin/configtxgen -profile OrdererGenesis -outputBlock ./channel-artifacts/genesis.block
  
-# Channel Configuration Transaction
+   # Channel Configuration Transaction
 3.	The next artefact was the channel configuration transaction, which was generated using the following command:
 ../bin/configtxgen -profile ChannelRelOrgs -outputCreateChannelTx ./channel-artifacts/channel.tx -channelID channelregorgs
 
  
-# Anchor Peer Transaction
+   # Anchor Peer Transaction
 
 4.	"Generate Reliance Infrastructure  tx" 
  ../bin/configtxgen -profile ChannelRegOrgs -outputAnchorPeersUpdate ./channel-artifacts/InfrastructureAnchor.tx -channelID channelrelorgs -asOrg INFRASTRUCTUREMSP
